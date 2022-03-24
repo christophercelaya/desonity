@@ -21,3 +21,11 @@ Paste the url of this repo and click add
 ![package manager](./paste%20git%20url.png)
 
 Unity will automatically clone the repo in your project packages and you should be able to use the Desonity namespace in your scripts.
+
+## Buidl
+
+Unity should compile your scripts and you should see Desonity appear in the list of installed packages
+
+![installed](./done.png)
+
+[< go back](../README.md)

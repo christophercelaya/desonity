@@ -4,7 +4,7 @@ A Unity3D package for interacting with the DeSo blockchain 💎
 
 ## See [Installation](Installation/install.md) to get started
 
-## Example
+## Examples
 
 To use Desonity you must import `Desonity` namespace
 
@@ -76,3 +76,7 @@ Any method **not** starting with a `get` can be called like a normal method, e.g
 Debug.Log(profile.avatarUrl());
 // returns avatar image url for a public key
 ```
+
+## Thank You!
+
+If you are using Desonity to buidl something consider supporting me on Deso [@weeblet](https://diamondapp.com/u/weeblet) and feel free to show me your crative implementaitons of Desonity ;)
