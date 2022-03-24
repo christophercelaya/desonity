@@ -1,0 +1,18 @@
+{
+  "name": "com.weeblet.desonity",
+  "version": "1.0.0",
+  "displayName": "Desonity",
+  "description": "A Unity3D package to interact with the deso blockchain",
+  "unity": "2020.3",
+  "dependencies": {},
+  "keywords": [
+    "deso",
+    "unity",
+    "desonity",
+    "bitclout"
+  ],
+  "author": {
+    "name": "weeblet",
+    "url": "https://bitclout.com/u/weeblet"
+  }
+}
