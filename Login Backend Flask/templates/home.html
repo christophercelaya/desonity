@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="flex-center">
+    {% if data.loggedInKey %}
+    <h2>Logged in as {{data.loggedInKey}}</h2>
+    <h4>You can close this window now</h4>
+    <button onclick="logout()">logout</button>
+
+    {% else %}
+    {% if data.requester %}
+    <h1>Login at {{data.requester}} with Deso Identity</h1>
+    {% else %}
+    <h1>Login with <a href="https://github.com/ankushKun/Desonity" target="_blank">Desonity</a></h1>
+    {% endif %}
+    <button onclick="login()">login with identity</button>
+    {% endif %}
+</div>
+{% endblock %}

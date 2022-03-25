@@ -13,6 +13,28 @@ using UnityEngine;
 using Desonity;
 ```
 
+### Login with Deso Identity
+
+You will need to setup your own backend with python or javascript that will handle Deso identity.
+
+The Unity project will require the url for the backend and a friendly name for your project which will be shown to users during login.
+
+Checkout example python flask webapp [here](Login%20Backend%20Flask)
+
+```cs
+string appName = "My App";
+string backendUrl = "http://localhost:5000"; // either localhost or domain url
+
+var login = new Desonity.Identity(appName,backendUrl);
+
+// This will open the default browser and prompt the user to login with level 2 access
+StartCoroutine(login.getLogin(
+    onComplete: res => {
+        Debug.Log (res); // res will be the public key of the logged in account
+    }
+));
+```
+
 ### Getting a Profile from Public Key
 
 ```cs

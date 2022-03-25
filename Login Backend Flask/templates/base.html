@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js"
+        integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../static/js/login.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Desonity Login</title>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <iframe id="identity" frameborder="0" src="https://identity.deso.org/embed" style="height: 100vh; width: 100vw; display: none; position: fixed; 
+        z-index: 1000; left: 0; top: 0;"></iframe>
+    {% block main %}{% endblock %}
+</body>
+
+</html>

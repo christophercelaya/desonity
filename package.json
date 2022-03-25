@@ -1,6 +1,6 @@
 {
   "name": "com.weeblet.desonity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Desonity",
   "description": "A Unity3D package to interact with the deso blockchain",
   "unity": "2020.3",
