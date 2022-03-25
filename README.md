@@ -30,7 +30,7 @@ StartCoroutine(profile.getProfile(
 
 ```cs
 string readerKey = "BC1YLhF5DHfgqM7rwYK8PVnfKDmMXyVeQqJyeJ8YGsmbVb14qTm123G";
-string nftPostHashHex = "";
+string nftPostHashHex = "3a8cd1ae7d727247b95b6d1e0baf0b6f2ddcb992cb72d113548a3e504b707526";
 
 var nft = new Desonity.Nft(readerKey);
 
@@ -46,7 +46,7 @@ StartCoroutine(nft.getSingleNft(
 var nft = new Desonity.Nft(readerKey);
 
 StartCoroutine(profile.getNftsForUser(
-    UserPublicKeyBase58Check: anNftPostHash,
+    UserPublicKeyBase58Check: "a deso public key",
     onComplete: s => { Debug.Log(s); }
 ));
 ```
