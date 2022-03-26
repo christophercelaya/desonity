@@ -88,7 +88,7 @@ StartCoroutine(profile.getNftsForUser(
 
 ## Important
 
-Any method starting with `get` is an `IEnumberator` and must be called through `StartCoroutine(nameOfTheMethod())`
+Any method starting with `get` is an `IEnumerator` and must be called through `StartCoroutine(nameOfTheMethod())`
 
 **`get` methods return a JSON string which the users need to pars on their own as of version `1.0.0`**
 
@@ -101,4 +101,4 @@ Debug.Log(profile.avatarUrl());
 
 ## Thank You!
 
-If you are using Desonity to buidl something consider supporting me on Deso [@weeblet](https://diamondapp.com/u/weeblet) and feel free to show me your crative implementaitons of Desonity ;)
+If you are using Desonity to build something consider supporting me on Deso [@weeblet](https://diamondapp.com/u/weeblet) and feel free to show me your creative implementaitons of Desonity ;)

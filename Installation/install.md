@@ -28,4 +28,4 @@ Unity should compile your scripts and you should see Desonity appear in the list
 
 ![installed](./done.png)
 
-[< go back](../README.md)
+[< go back](../.)
