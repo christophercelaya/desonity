@@ -19,11 +19,13 @@ You will need to setup your own backend with python or javascript that will hand
 
 The Unity project will require the url for the backend and a friendly name for your project which will be shown to users during login.
 
+You can use `https://desonity-login.herokuapp.com` as the backend url.
+
 Checkout example python flask webapp [here](Login%20Backend%20Flask)
 
 ```cs
 string appName = "My App";
-string backendUrl = "http://localhost:5000"; // either localhost or domain url
+string backendUrl = "http://localhost:5000"; // url to your hosted backend or localhost
 
 var login = new Desonity.Identity(appName,backendUrl);
 
