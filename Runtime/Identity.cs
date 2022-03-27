@@ -25,8 +25,8 @@ namespace Desonity
             {
                 var uwr = new UnityWebRequest(keyUrl, "POST");
                 byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(postData);
-                uwr.uploadHandler = (UploadHandler) new UploadHandlerRaw(jsonToSend);
-                uwr.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+                uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+                uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
                 uwr.SetRequestHeader("Content-Type", "application/json");
 
                 yield return uwr.SendWebRequest();
@@ -60,7 +60,7 @@ namespace Desonity
             string myuuidAsString = myuuid.ToString();
 
             Application.OpenURL(backendURL + "/login/" + myuuidAsString + "?appname=" + appName);
-            
+
             yield return checkLoggedIn(
                 keyUrl: backendURL + "/getKey",
                 uuid: myuuidAsString,

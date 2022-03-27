@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Networking;
+using Newtonsoft.Json;
 
 namespace Desonity
 {
@@ -9,16 +9,29 @@ namespace Desonity
     {
         string JSONStr;
 
-        private string postHash, readerKey;
+        private string postHash;
+        private string readerKey;
+        private string seedHex;
         public Nft(string ReaderPublicKeyBase58Check)
         {
             readerKey = ReaderPublicKeyBase58Check;
         }
 
+        public Nft(string ReaderPublicKeyBase58Check, string SeedHex)
+        {
+            readerKey = ReaderPublicKeyBase58Check;
+            seedHex = SeedHex;
+        }
+
         public IEnumerator getSingleNft(Action<string> onComplete, string PostHashHex)
         {
             string endpoint = "/get-nft-entries-for-nft-post";
-            string postData = "{\"PostHashHex\":\"" + PostHashHex + "\",\"ReaderPublicKeyBase58Check\":\"" + readerKey + "\"}";
+            var endpointClass = new Endpoints.getNftEntriesForNftPost
+            {
+                PostHashHex = PostHashHex,
+                ReaderPublicKeyBase58Check = readerKey
+            };
+            string postData = JsonConvert.SerializeObject(endpointClass);
 
             yield return Route.POST(endpoint, postData, onComplete);
         }
@@ -31,16 +44,18 @@ namespace Desonity
             // forSale:null  -> all owned nfts
 
             string endpoint = "/get-nfts-for-user";
-            string postData;
-            if (forSale.HasValue)
+            var endpointClass = new Endpoints.getNftsForUser
             {
-                postData = "{\"ReaderPublicKeyBase58Check\":\"" + readerKey + "\",\"UserPublicKeyBase58Check\":\"" + UserPublicKeyBase58Check + "\",\"IsForSale\":" + forSale.Value.ToString().ToLower() + "}";
-            }
-            else
-            {
-                postData = "{\"ReaderPublicKeyBase58Check\":\"" + readerKey + "\",\"UserPublicKeyBase58Check\":\"" + UserPublicKeyBase58Check + "\",\"IsForSale\": null}";
-            }
+                ReaderPublicKeyBase58Check = readerKey,
+                UserPublicKeyBase58Check = UserPublicKeyBase58Check,
+            };
+            if (forSale.HasValue) { endpointClass.IsForSale = forSale; }
+            string postData = JsonConvert.SerializeObject(endpointClass);
             yield return Route.POST(endpoint, postData, onComplete);
+        }
+        public IEnumerator mint()
+        {
+            yield return "OK";
         }
     }
 }
